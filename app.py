@@ -119,13 +119,18 @@ if st.button("🔮  Predict My Grade", use_container_width=True, type="primary")
     st.subheader("Your Predicted Grade")
 
     if prediction >= 80:
-        st.success(f"🏆  **{prediction} / 100** — Excellent! Keep it up.")
+        st.info(f"🏆  **{prediction} / 100** With `Grade A+` — Excellent! Keep it up.")
         feedback = "You are on track for an A. Maintain your current habits."
+    elif prediction >= 70:
+        st.info(f"🏆  **{prediction} / 100** With `Grade A` — Excellent! Keep it up.")
     elif prediction >= 60:
-        st.info(f"👍  **{prediction} / 100** — Good standing.")
+        st.info(f"👍  **{prediction} / 100** wiht `Grade B` — Good standing.")
         feedback = "You are passing. Increasing daily study hours will push you higher."
+    elif prediction >= 50:
+        st.info(f"👍  **{prediction} / 100** wiht `Grade C` — Good standing.")
+        feedback = "Try to improve your attendance and add 1–2 more study hours daily."
     elif prediction >= 40:
-        st.warning(f"⚠️  **{prediction} / 100** — Needs improvement.")
+        st.warning(f"⚠️  **{prediction} / 100** `Grade D` — Needs improvement.")
         feedback = "Try to improve your attendance and add 1–2 more study hours daily."
     else:
         st.error(f"🚨  **{prediction} / 100** — At risk of failing.")
